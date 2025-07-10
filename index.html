@@ -79,18 +79,12 @@
       const identifiant = document.getElementById('identifiant').value.trim();
       const motdepasse = document.getElementById('motdepasse').value;
 
-      // Identifiants autorisés
       const identifiantCorrect = "glodean.giorgiana";
       const motdepasseCorrect = "17Stylos@";
 
       if (identifiant === identifiantCorrect && motdepasse === motdepasseCorrect) {
-        // Télécharger le bon fichier PDF
-        const lien = document.createElement('a');
-        lien.href = 'glodean.giorgiana_BAC2025.pdf.pdf';
-        lien.download = 'glodean.giorgiana_BAC2025.pdf.pdf';
-        document.body.appendChild(lien);
-        lien.click();
-        document.body.removeChild(lien);
+        // Ouvre le PDF directement dans un nouvel onglet
+        window.open("glodean.giorgiana_BAC2025.pdf.pdf", "_blank");
       } else {
         alert("Identifiant ou mot de passe incorrect.");
       }
