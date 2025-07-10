@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultats BAC 2025</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)),
+                  url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #004085;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .footer {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Connexion aux Résultats BAC 2025</h2>
+    <form id="loginForm">
+      <input type="text" id="identifiant" placeholder="Identifiant" required />
+      <input type="password" id="motdepasse" placeholder="Mot de passe" required />
+      <button type="submit">Connexion</button>
+    </form>
+    <div class="footer">
+      Ministère de l'Éducation Nationale
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const identifiant = document.getElementById('identifiant').value.trim();
+      const motdepasse = document.getElementById('motdepasse').value;
+
+      // Identifiants autorisés
+      const identifiantCorrect = "glodean.giorgiana";
+      const motdepasseCorrect = "17Stylos@";
+
+      if (identifiant === identifiantCorrect && motdepasse === motdepasseCorrect) {
+        // Télécharger le bon fichier PDF
+        const lien = document.createElement('a');
+        lien.href = 'glodean.giorgiana_BAC2025.pdf.pdf';
+        lien.download = 'glodean.giorgiana_BAC2025.pdf.pdf';
+        document.body.appendChild(lien);
+        lien.click();
+        document.body.removeChild(lien);
+      } else {
+        alert("Identifiant ou mot de passe incorrect.");
+      }
+    });
+  </script>
+</body>
+</html>
